@@ -18,7 +18,6 @@ struct LandmarkRow: View {
             Text(landmark.name)
             Spacer()
         }
-        .padding()
     }
 }
 
