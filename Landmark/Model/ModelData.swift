@@ -29,4 +29,6 @@ func load<T: Decodable>(_ filename: String) -> T {
     }
 }
 
-var landmarks: [Landmark] = load("landmarkData.json")
+final class ModelData: ObservableObject {
+    @Published var landmarks: [Landmark] = load("landmarkData.json")
+}
