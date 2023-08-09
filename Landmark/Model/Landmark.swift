@@ -35,4 +35,11 @@ struct Landmark: Codable, Hashable, Identifiable {
     var about: String {
         "About \(name)"
     }
+    
+//    enum Category: String, CaseIterable, Codable {
+//        case lakes = "Lakes"
+//        case mountaints = "Mountaint"
+//        case rivers = "Rivers"
+//    }
+//    var category: Category
 }
