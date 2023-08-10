@@ -10,22 +10,22 @@ import Foundation
 import SwiftUI
 
 struct Landmark: Codable, Hashable, Identifiable {
-    var id: Int
-    var name: String
-    var park: String
-    var state: String
-    var description: String
+    let id: Int
+    let name: String
+    let park: String
+    let state: String
+    let description: String
     var isFavorite: Bool
     var isFeatured: Bool
     
-    private var imageName: String
+    private let imageName: String
     var image: Image {
         Image(imageName)
     }
     
     struct Coordinates: Codable, Hashable {
-        var longitude: Double
-        var latitude: Double
+        let longitude: Double
+        let latitude: Double
     }
     
     private var coordinates: Coordinates

@@ -8,21 +8,21 @@
 import Foundation
 
 struct Hike: Codable, Hashable, Identifiable {
-    var id: Int
-    var name: String
-    var distance: Double
-    var difficulty: Int
-    var observations: [Observation]
+    let id: Int
+    let name: String
+    let distance: Double
+    let difficulty: Int
+    let observations: [Observation]
     
     struct Observation: Codable, Hashable {
-        var distanceFromStart: Double
+        let distanceFromStart: Double
         
-        var elevation: Range<Double>
-        var pace: Range<Double>
-        var heartRate: Range<Double>
+        let elevation: Range<Double>
+        let pace: Range<Double>
+        let heartRate: Range<Double>
     }
     
-    static var formatter = LengthFormatter()
+    static let formatter = LengthFormatter()
     
     var distanceText: String {
         Hike.formatter
