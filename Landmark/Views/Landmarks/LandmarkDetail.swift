@@ -32,7 +32,7 @@ struct LandmarkDetail: View {
                             .multilineTextAlignment(.center)
                         FavoriteButton(isSet: $modelData.landmarks[landmarkIndex].isFavorite)
                     }
-                    
+
                     HStack {
                         Text(landmark.park)
                         Spacer()

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileHost: View {
     @Environment(\.editMode) var editMode
+//    @Environment(\.add)
     @EnvironmentObject var modelData: ModelData
     @State private var draftProfile = Profile.default
     

@@ -10,6 +10,7 @@ import SwiftUI
 struct CategoryRow: View {
     var categoryName: String
     var items: [Landmark]
+//    var items: [Task]
     
     var body: some View {
         VStack(alignment: .leading) {

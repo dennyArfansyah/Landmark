@@ -11,6 +11,7 @@ final class ModelData: ObservableObject {
     @Published var landmarks: [Landmark] = load("landmarkData.json")
     let hikes: [Hike] = load("hikeData.json")
     @Published var profile = Profile.default
+    @Published var tasks: [Task] = load("task.json")
     
     var featured: [Landmark] {
         landmarks.filter { $0.isFeatured }
@@ -20,6 +21,13 @@ final class ModelData: ObservableObject {
         Dictionary(
             grouping: landmarks,
             by: { $0.category.rawValue }
+        )
+    }
+    
+    var taskCategories: [String: [Task]] {
+        Dictionary(
+            grouping: tasks,
+            by: { $0.category }
         )
     }
 }
@@ -44,4 +52,10 @@ func load<T: Decodable>(_ filename: String) -> T {
     } catch {
         fatalError("Could not parse \(filename) as \(T.self):\n\(error)")
     }
+}
+
+func getStandardDate(newDate: Date) -> String {
+    let dateToString = DateFormatter()
+    dateToString.dateFormat = "yyyy-MM-dd HH:mm:ss"
+    return dateToString.string(from: newDate)
 }

@@ -44,4 +44,20 @@ struct Landmark: Codable, Hashable, Identifiable {
     }
     var category: Category
     
+    var featureImage: Image? {
+        isFeatured ? Image(imageName + "_feature") : nil
+    }
+    
+}
+
+struct Task: Codable, Hashable, Identifiable {
+    let id: Int
+    let name: String
+    let description: String
+    let createAt: String
+    let deadlineAt: String
+    var doneAt: String? = nil
+    let isActive: Bool
+
+    var category: String
 }

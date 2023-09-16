@@ -29,4 +29,3 @@ struct Hike: Codable, Hashable, Identifiable {
             .string(fromValue: distance, unit: .kilometer)
     }
 }
-
